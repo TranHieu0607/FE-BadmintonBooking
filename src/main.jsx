@@ -4,9 +4,11 @@ import App from "./App.jsx";
 import Login from "./pages/Login/login.jsx";
 import HomePage from "./pages/HomePage/home.jsx";
 import About from "./pages/About/about.jsx";
+import Profile from "./pages/Profile/profile.jsx";
 
 import './index.css'; 
 import LoginLayout from "./pages/Login/loginLayout.jsx";
+import { AuthProvider } from './context/AuthContext';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
         path: "about",
         element: <About />,
       },
+      {
+        path: "profile",
+        element: <Profile />,
+      }
     ],
   },
   {
@@ -30,5 +36,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
 );
