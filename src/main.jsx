@@ -9,6 +9,7 @@ import Profile from "./pages/Profile/profile.jsx";
 import './index.css'; 
 import LoginLayout from "./pages/Login/loginLayout.jsx";
 import { AuthProvider } from './context/AuthContext';
+import AdminDashboard from "./pages/Admin/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
-      }
+      },
+      {
+        path: "admin",
+        element: <AdminDashboard />,
+      },
     ],
   },
   {
