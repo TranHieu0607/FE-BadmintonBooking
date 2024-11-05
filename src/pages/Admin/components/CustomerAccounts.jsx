@@ -65,7 +65,7 @@ const rows = [
     mockCustomerData(25, "han", "Han Ngo", "1994-04-16", "Male", "admin", "userC1", "2025-09-01", "2025-09-07")
 ];
 
-const CustomerAccountManagement = () => {
+const CustomerAccounts = () => {
   const [page, setPage] = React.useState(0); 
   const [perPage, setPerPage] = React.useState(5); 
 
@@ -181,4 +181,4 @@ const CustomerAccountManagement = () => {
     </div>
   );
 };
-export default CustomerAccountManagement;
+export default CustomerAccounts;

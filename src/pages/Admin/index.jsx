@@ -10,18 +10,23 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import OwnerAccountManagement from "./components/OwnerAccountManagement";
+import OwnerAccounts from "./components/OwnerAccounts";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import CustomerAccountManagement from "./components/CustomerAccountManagement";
-import CourtManagement from "./components/CourtManagement";
+import CustomerAccounts from "./components/CustomerAccounts";
+import Courts from "./components/Courts";
+import CourtBookings from "./components/CourtBookings";
 const AdminDashboard = () => {
-  const [value, setValue] = React.useState("2");
+  const [accountTab, setAccountTab] = React.useState("1");
+  const [courtTab, setCourtTab] = React.useState("1");
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleAccountTabChange = (event, newValue) => {
+    setAccountTab(newValue)
+  };
+  const handleCourtTabChange = (event, newValue) => {
+    setCourtTab(newValue)
   };
   return (
-    <div>
+    <div className="mt-24">
       <Card variant="outlined" className="my-8 mx-4">
         <Accordion defaultExpanded>
           <AccordionSummary
@@ -32,18 +37,18 @@ const AdminDashboard = () => {
             <Typography>Quản lý tài khoản hệ thống</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <TabContext value={value}>
+            <TabContext value={accountTab}>
               <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <TabList onChange={handleChange}>
+                <TabList onChange={handleAccountTabChange}>
                   <Tab label="Tài khoản khách hàng" value="1" />
                   <Tab label="Tài khoản chủ sân" value="2" />
                 </TabList>
               </Box>
               <TabPanel value="1">
-                <CustomerAccountManagement />
+                <CustomerAccounts />
               </TabPanel>
               <TabPanel value="2">
-                <OwnerAccountManagement />
+                <OwnerAccounts />
               </TabPanel>
             </TabContext>
           </AccordionDetails>
@@ -59,18 +64,18 @@ const AdminDashboard = () => {
             <Typography>Quản lý sân và lịch đặt sân</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <TabContext value={value}>
+            <TabContext value={courtTab}>
               <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <TabList onChange={handleChange}>
+                <TabList onChange={handleCourtTabChange}>
                   <Tab label="Lịch đặt sân" value="1" />
                   <Tab label="Sân" value="2" />
                 </TabList>
               </Box>
               <TabPanel value="1">
-                <CustomerAccountManagement />
+                <CourtBookings />
               </TabPanel>
               <TabPanel value="2">
-                <CourtManagement />
+                <Courts />
               </TabPanel>
             </TabContext>
           </AccordionDetails>
