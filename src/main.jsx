@@ -5,6 +5,7 @@ import Login from "./pages/Login/login.jsx";
 import HomePage from "./pages/HomePage/home.jsx";
 import About from "./pages/About/about.jsx";
 import Profile from "./pages/Profile/profile.jsx";
+import Booking from "./pages/Booking/booking.jsx";
 
 import './index.css'; 
 import LoginLayout from "./pages/Login/loginLayout.jsx";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "booking",
+        element: <Booking />,
       }
     ],
   },

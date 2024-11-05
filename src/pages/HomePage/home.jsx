@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   // Data array cho venues
   const venues = [
     {
@@ -33,6 +35,11 @@ const HomePage = () => {
     },
     // ... other venue data
   ];
+
+  const handleBookNow = (venueId) => {
+    // Navigate to the booking page with the venue ID as a query parameter
+    navigate(`/booking?id=${venueId}`);
+  };
 
   return (
     <div>
@@ -106,7 +113,8 @@ const HomePage = () => {
                     </svg>
                     View
                   </button>
-                  <button className="flex-1 px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                  <button onClick={() => handleBookNow(venue.id)}
+                  className="flex-1 px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700">
                     Book Now
                   </button>
                 </div>

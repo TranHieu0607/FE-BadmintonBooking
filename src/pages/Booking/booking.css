@@ -1,0 +1,29 @@
+.booking-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .booking-header {
+    text-align: center;
+  }
+  
+  .booking-form {
+    flex: 2;
+  }
+  
+  .booking-step {
+    margin-bottom: 20px;
+  }
+  
+  .booking-cart {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .booking-summary {
+    margin-top: 20px;
+    }
+  
