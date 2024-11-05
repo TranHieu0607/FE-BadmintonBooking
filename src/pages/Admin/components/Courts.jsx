@@ -88,7 +88,7 @@ const rows = [
   ];
   
 
-const CourtManagement = () => {
+const Courts = () => {
   const [page, setPage] = React.useState(0);
   const [perPage, setPerPage] = React.useState(5);
 
@@ -244,4 +244,4 @@ const CourtManagement = () => {
     </div>
   );
 };
-export default CourtManagement;
+export default Courts;
