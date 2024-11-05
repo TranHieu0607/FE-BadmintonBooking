@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/home.jsx";
 
 import './index.css'; 
 import LoginLayout from "./pages/Login/loginLayout.jsx";
+import AdminDashboard from "./pages/Admin/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/admin",
+        element: <AdminDashboard />,
       },
     ],
   },
